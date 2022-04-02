@@ -1,15 +1,15 @@
 #/bin/bash
 
-mv -r ~/.vim ~/.vim.old
+mv ~/.vim ~/.vim.old
 mv ~/.vimrc ~/.vimrc.old
 
 cp .vimrc ~/.vimrc
-mkdir ~/.vim
+mkdir -p ~/.vim
 cd ~/.vim
 mkdir pack
 cd pack
 
-mkdir tpope/start
+mkdir -p tpope/start
 cd tpope/start
 
 git clone https://tpope.io/vim/commentary.git
@@ -22,15 +22,17 @@ git clone https://github.com/tpope/vim-vinegar.git
 cd ../..
 
 
-mkdir syntastic/start/
+mkdir -p syntastic/start/
 cd syntastic/start/
 git clone https://github.com/vim-syntastic/syntastic.git
 
 cd ../..
 
 
-mkdir ycm/start
+mkdir -p ycm/start
 cd ycm/start
 
 git clone https://github.com/ycm-core/YouCompleteMe.git
-
+cd YouCompleteMe
+git submodule update --init --recursive
+./install.py --clang-completer --clangd-completer --cs-completer --rust-completer --java-completer --ts-completer
