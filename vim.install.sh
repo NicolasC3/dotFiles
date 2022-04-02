@@ -3,7 +3,7 @@
 mv -r ~/.vim ~/.vim.old
 mv ~/.vimrc ~/.vimrc.old
 
-cp .vimrc ~/vimrc
+cp .vimrc ~/.vimrc
 mkdir ~/.vim
 cd ~/.vim
 mkdir pack
