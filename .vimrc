@@ -4,17 +4,8 @@ set mouse=a
 set number
 set cc=81
 hi ColorColumn ctermbg=lightgrey guibg=lightgrey
-
-" Theme
-
 syntax on
-" set t_Co=256
-" set cursorline
-" set termguicolors
-" colorscheme atom-dark
-" let g:airline_theme='onehalfdark'
-" lightline
-" let g:lightline = { 'colorscheme': 'onehalfdark' }
+set path+=**
 
 " Syntastic default seting
 
