@@ -35,4 +35,13 @@ cd ycm/start
 git clone https://github.com/ycm-core/YouCompleteMe.git
 cd YouCompleteMe
 git submodule update --init --recursive
-./install.py --clang-completer --clangd-completer --cs-completer --rust-completer --java-completer --ts-completer
+./install.py --clang-completer --clangd-completer --cs-completer --java-completer --ts-completer
+
+cd ../../..
+
+
+
+mkdir -p utilsnips/start/
+cd utilsnips/start/
+
+git clone https://github.com/SirVer/ultisnips.git
