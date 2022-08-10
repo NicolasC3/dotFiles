@@ -23,28 +23,15 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'junegunn/fzf', { 'do': { -> fzf#install()  }  }
 Plug 'junegunn/fzf.vim'
 Plug 'tpope/vim-fugitive'
-
+Plug 'honza/vim-snippets'
+Plug 'vim-airline/vim-airline'
 Plug 'puremourning/vimspector'
-let g:vimspector_enable_mappings = 'HUMAN'
 
 " Latex plugins
 Plug 'sirver/ultisnips'
-let g:UltiSnipsExpandTrigger = '<²>'
-let g:UltiSnipsJumpForwardTrigger = '<tab>'
-let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
-
 Plug 'lervag/vimtex'
-let g:tex_flavor='latex'
-let g:vimtex_view_method='zathura'
-let g:vimtex_quickfix_mode=0
-
 Plug 'KeitaNakamura/tex-conceal.vim'
-set conceallevel=1
-let g:tex_conceal='abdmg'
-hi Conceal ctermbg=none
-
 Plug 'gillescastel/latex-snippets'
-set runtimepath+=~/.vim/plugged/latex-snippets
 
 " List ends here. Plugins become visible to Vim after this call.
 call plug#end()
@@ -53,6 +40,50 @@ autocmd VimEnter *
 			\  if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
 			\|   PlugInstall --sync | q
 			\| endif
+
+"---------------------------------------------------------------------"
+
+
+
+
+"---------------------------Plugins settings--------------------------"
+
+" airline
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#left_sep = ' '
+let g:airline#extensions#tabline#left_alt_sep = '|'
+
+" ultisnips
+let g:UltiSnipsExpandTrigger = '<²>'
+let g:UltiSnipsJumpForwardTrigger = '<tab>'
+let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
+
+" vimtex
+let g:tex_flavor='latex'
+let g:vimtex_view_method='zathura'
+let g:vimtex_quickfix_mode=0
+
+" tex_conceal
+set conceallevel=1
+let g:tex_conceal='abdmg'
+hi Conceal ctermbg=none
+
+" latex-snippets
+set runtimepath+=~/.vim/plugged/latex-snippets
+if !isdirectory(glob(data_dir . '/ftdetect'))
+	silent execute '!mkdir -p '.data_dir.'/ftdetect/'
+	silent execute '!ln -s '.data_dir.'/plugged/latex-snippets/ftdetect/* '.data_dir.'/ftdetect/'
+endif
+
+" vimspector
+let g:vimspector_enable_mappings = 'HUMAN'
+nmap <F1> :CocCommand java.debug.vimspector.start<CR>
+
+" fugitive
+:command Gtree G log --oneline --decorate --graph --all
+
+" fzf
+:nnoremap <C-p> :Files<CR>
 
 "---------------------------------------------------------------------"
 
@@ -69,7 +100,7 @@ set mouse=a
 set number relativenumber
 set cc=81
 syntax on
-set nocompatible 
+set nocompatible
 setlocal spell
 set spelllang=en_us
 
@@ -77,11 +108,18 @@ set softtabstop=0 noexpandtab
 set tabstop=4
 set shiftwidth=4
 
+" Theme settings
 set bg=dark
 hi ColorColumn ctermbg=237 guibg=lightgrey
 " hi SpellBad ctermfg=Red ctermbg=Blue
-" hi Visual ctermbg=237 guibg=Grey 
+" hi Visual ctermbg=237 guibg=Grey
 
+" Custom commands and shortcuts
+:nnoremap <C-j> :bN<CR>
+:nnoremap <C-k> :bn<CR>
+:nnoremap <C-h> :tabNext<CR>
+:nnoremap <C-l> :tabnext<CR>
+:call coc#config('diagnostic', {'virtualText': 'true'})
 
 " Latex snippets settings
 
@@ -91,6 +129,11 @@ hi ColorColumn ctermbg=237 guibg=lightgrey
 
 
 "-----------------------------Coc settings----------------------------"
+" Custom
+nnoremap <C-d> :call CocActionAsync('jumpDefinition')<CR>
+
+
+" Default
 " Some servers have issues with backup files, see #649.
 set nobackup
 set nowritebackup
