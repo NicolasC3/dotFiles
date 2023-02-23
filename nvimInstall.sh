@@ -39,4 +39,7 @@ if [ "$init" = "y" ]; then
 
 	mkdir $HOME/.config/nvim
 	cp -rs $(pwd)/nvimConfig/* $HOME/.config/nvim
+
+    nvim --cmd "so ~/.config/nvim/lua/theprimeagen/packer.lua" --cmd "PackerSync" &
+    kill -9 $!
 fi
