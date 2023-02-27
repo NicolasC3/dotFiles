@@ -1,0 +1,5 @@
+wm : i3
+term : alacritty / default
+shell : bash (in search of replacement)
+prompt : starship
+term multiplex :

@@ -66,6 +66,8 @@ return require('packer').startup(function(use)
 
     use('tpope/vim-commentary')
 
+    use 'lervag/vimtex'
+
     use {
         "iurimateus/luasnip-latex-snippets.nvim",
         -- replace "lervag/vimtex" with "nvim-treesitter/nvim-treesitter" if you're
