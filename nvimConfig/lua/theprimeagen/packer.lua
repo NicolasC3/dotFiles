@@ -14,10 +14,9 @@ return require('packer').startup(function(use)
     }
 
     use({
-        'rose-pine/neovim',
-        as = 'rose-pine',
+        'folke/tokyonight.nvim',
         config = function()
-            vim.cmd('colorscheme rose-pine')
+            vim.cmd('colorscheme tokyonight-night')
         end
     })
 
@@ -66,13 +65,13 @@ return require('packer').startup(function(use)
 
     use('tpope/vim-commentary')
 
-    use 'lervag/vimtex'
+    use('lervag/vimtex')
 
     use {
         "iurimateus/luasnip-latex-snippets.nvim",
         -- replace "lervag/vimtex" with "nvim-treesitter/nvim-treesitter" if you're
         -- using treesitter.
-        requires = { "L3MON4D3/LuaSnip", "lervag/vimtex" },
+        -- requires = { "L3MON4D3/LuaSnip", "lervag/vimtex" },
         config = function()
             require 'luasnip-latex-snippets'.setup()
             -- or setup({ use_treesitter = true })
