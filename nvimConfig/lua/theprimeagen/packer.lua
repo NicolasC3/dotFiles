@@ -79,6 +79,14 @@ return require('packer').startup(function(use)
         ft = "tex",
     }
 
+    -----------markdown---------------
+    use 'godlygeek/tabular'
+    use 'elzr/vim-json'
+    use 'plasticboy/vim-markdown'
+    use 'iamcco/markdown-preview.nvim'
+
+    use 'mfussenegger/nvim-jdtls'
+
     -- use {
     --     "iurimateus/luasnip-latex-snippets.nvim",
     --     -- replace "lervag/vimtex" with "nvim-treesitter/nvim-treesitter" if you're
