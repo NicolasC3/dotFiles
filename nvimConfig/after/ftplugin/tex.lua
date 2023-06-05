@@ -1,3 +1,6 @@
+vim.keymap.set('i', '/', '\\')
+vim.keymap.set('i', '\\', '/')
+
 -- local vimtex = require("vimtex")
 
 -- -- This is necessary for VimTeX to load properly. The "indent" is optional.
@@ -24,6 +27,39 @@
 -- -- see ":help vimtex-compiler".
 -- vim.g.vimtex_compiler_method = 'pdflatex --shell-escape'
 
--- -- Most VimTeX mappings rely on localleader and this can be changed with the
--- -- following line. The default is usually fine and is the symbol "\".
--- -- vim.maplocalleader = ","
+-- Most VimTeX mappings rely on localleader and this can be changed with the
+-- following line. The default is usually fine and is the symbol "\".
+-- vim.maplocalleader = ","
+-- local ls = require("luasnip")
+
+-- local snip = {
+--     ls.parser.parse_snipet(
+--         { trig = "bf", name = "bold" },
+--         "\\textbf{$1}"
+--     ),
+
+--     ls.parser.parse_snipet(
+--         { trig = "it", name = "italic" },
+--         "\\textit{$1}"
+--     ),
+-- }
+
+-- return snip
+
+-- ls.add_snippets("all", {
+--     s("bf", {
+--         t("\\textbf{"),
+--         i(1),
+--         t("}"),
+--         i(2),
+--     }),
+
+--     s("it", {
+--         t("\\textit{"),
+--         i(1),
+--         t("}"),
+--         i(2),
+--     }),
+-- }, {
+--     key = "all",
+-- })
