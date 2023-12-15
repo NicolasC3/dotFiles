@@ -1,2 +1,0 @@
-nvchad
-https://github.com/dreamsofcode-io/neovim-rust
