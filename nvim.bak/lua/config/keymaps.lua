@@ -24,11 +24,3 @@ end)
 vim.keymap.set("n", "<leader>l", function()
   harpoon:list():select(4)
 end)
-
-vim.keymap.set("n", "<leader>gt", ":call SVED_Sync()<CR>")
-
--- Insert mode motions
-vim.keymap.set("i", "<C-h>", "<Left>")
--- vim.keymap.set("i", "<C-j>", "<Down>")
--- vim.keymap.set("i", "<C-k>", "<Up>")
-vim.keymap.set("i", "<C-l>", "<Right>")
