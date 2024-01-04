@@ -8,4 +8,8 @@ return {
       require("harpoon").setup()
     end,
   },
+  {
+    "xiyaowong/transparent",
+    lazy = false,
+  },
 }

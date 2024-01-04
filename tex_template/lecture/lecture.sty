@@ -1,0 +1,111 @@
+\ProvidesPackage{lecture}
+
+\RequirePackage[T1]{fontenc}
+
+% Set page size and margins
+% Replace `letterpaper' with`a4paper' for UK/EU standard size
+\RequirePackage[letterpaper,top=3cm,bottom=2cm,left=3cm,right=3cm,marginparwidth=1.75cm]{geometry}
+
+
+\RequirePackage{ntheorem}
+\RequirePackage{mathtools}
+\DeclarePairedDelimiter\bra{\langle}{\rvert}
+\DeclarePairedDelimiter\ket{\lvert}{\rangle}
+\DeclarePairedDelimiterX\braket[2]{\langle}{\rangle}{#1\,\delimsize\vert\,\mathopen{}#2}
+
+\RequirePackage[many]{tcolorbox}
+\RequirePackage{thmtools}
+\RequirePackage{multicol}
+\setlength{\columnsep}{35pt}
+\RequirePackage{transparent}
+\RequirePackage{hyperref}
+\hypersetup{
+    colorlinks,
+    citecolor=black,
+    filecolor=black,
+    linkcolor=black,
+    urlcolor=black
+}
+
+% \RequirePackage{auto-pst-pdf}
+
+\theoremstyle{break}
+\theoremseparator{\vspace{5pt}}
+\newtheorem{rappel}{Rappel}
+\newtheorem{definition}{Definition}
+\newtheorem{theorem}{Théorème}
+\newtheorem{exercise}{Exercice}
+\newtheorem{remarque}{Remarque}
+\newtheorem{example}{Exemple}
+
+\tcolorboxenvironment{rappel}{
+  colback=green!2!white,
+  colframe=green!50!black,
+  boxrule=2pt,
+  boxsep=1pt,
+  left=5pt,right=5pt,top=5pt,bottom=5pt,
+  oversize=2pt,
+  % sharp corners,
+  before skip=\topsep,
+  after skip=\topsep,
+}
+
+\tcolorboxenvironment{definition}{
+  colback=blue!2!white,
+  colframe=blue!50!black,
+  boxrule=2pt,
+  boxsep=1pt,
+  left=5pt,right=5pt,top=5pt,bottom=5pt,
+  oversize=2pt,
+  % sharp corners,
+  before skip=\topsep,
+  after skip=\topsep,
+}
+
+\tcolorboxenvironment{theorem}{
+  colback=red!2!white,
+  colframe=red!50!black,
+  boxrule=2pt,
+  boxsep=1pt,
+  left=5pt,right=5pt,top=5pt,bottom=5pt,
+  oversize=2pt,
+  % sharp corners,
+  before skip=\topsep,
+  after skip=\topsep,
+}
+
+\tcolorboxenvironment{exercise}{
+  colback=black!2!white,
+  colframe=white!50!black,
+  boxrule=2pt,
+  boxsep=1pt,
+  left=5pt,right=5pt,top=5pt,bottom=5pt,
+  oversize=2pt,
+  % sharp corners,
+  before skip=\topsep,
+  after skip=\topsep,
+}
+
+\tcolorboxenvironment{remarque}{
+  colback=orange!2!white,
+  colframe=orange!50!white,
+  boxrule=2pt,
+  boxsep=1pt,
+  left=5pt,right=5pt,top=5pt,bottom=5pt,
+  oversize=2pt,
+  % sharp corners,
+  before skip=\topsep,
+  after skip=\topsep,
+}
+
+\tcolorboxenvironment{example}{
+  colback=black!2!white,
+  colframe=white!50!black,
+  boxrule=2pt,
+  boxsep=1pt,
+  left=5pt,right=5pt,top=5pt,bottom=5pt,
+  oversize=2pt,
+  % sharp corners,
+  before skip=\topsep,
+  after skip=\topsep,
+}

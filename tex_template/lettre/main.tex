@@ -1,0 +1,63 @@
+%emetteur
+\def\prenomEmmeteur{Nicolas}
+\def\nomEmmeteur{Catoni}
+\def\telephoneEmmeteur{+33 7 61 11 25 27}
+\def\emailEmmeteur{catoni.nicolas@gmail.com}
+\def\addressEmmeteur{79 rue Pierre-Paul Riquet}
+\def\cpEmmeteur{31000}
+\def\villeEmmeteur{Toulouse}
+
+\def\lieuEmission{Toulouse}
+
+%destinataire
+\def\prenomDestinataire{Prénom}
+\def\nomDestinataire{Nom}
+\def\addressDestinataire{Adresse}
+\def\cpDestinataire{Code postal}
+\def\villeDestinataire{Ville}
+
+
+\documentclass[11pt]{lettre}
+\usepackage[french]{babel}
+\usepackage[T1]{fontenc}
+\begin{document}
+\begin{letter}{
+    \prenomDestinataire \space \nomDestinataire\\
+    \addressDestinataire\\
+    \cpDestinataire \space \villeDestinataire
+  }
+\date{le \today} 
+\lieu{\lieuEmission}
+\name{\prenomEmmeteur \space \nomEmmeteur}
+\signature{
+  \lieuEmission, le \today\\
+  \vspace{2cm}
+  \prenomEmmeteur \space \nomEmmeteur
+}
+\address{\prenomEmmeteur \space \nomEmmeteur,\\ \addressEmmeteur, \\ \cpEmmeteur \space \villeEmmeteur}
+\telephone{\telephoneEmmeteur}
+\nofax
+\email{\emailEmmeteur}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\conc{
+  OBJET
+}
+
+\opening{CIVILITÉ,}
+
+Lorem ipsum dolor sit amet, qui minim labore adipisicing minim
+sint cillum sint consectetur cupidatat.
+
+\closing{
+  Veuillez agréer, CIVILITÉ, l'expression de mes salutations distinguées.
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+% \ps{post-scriptum}
+% \cc{nom des autres destinataires}
+% \encl{pièces jointes}
+\end{letter}
+\end{document}

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<keys
+   name="User Shortcuts">
+  <bind
+     gaction="app.object-set-attribute: stroke-opacity, 0.5"
+     keys="&lt;Primary&gt;t" />
+  <modifier
+     action="canvas-pan-y"
+     modifiers="" />
+  <modifier
+     action="canvas-pan-x"
+     modifiers="Shift" />
+  <modifier
+     action="canvas-zoom"
+     modifiers="Ctrl" />
+  <modifier
+     action="canvas-rotate"
+     modifiers="Ctrl,Shift" />
+  <modifier
+     action="select-add-to"
+     modifiers="Shift" />
+  <modifier
+     action="select-in-groups"
+     modifiers="Ctrl" />
+  <modifier
+     action="select-touch-path"
+     modifiers="Alt" />
+  <modifier
+     action="select-always-box"
+     modifiers="Shift" />
+  <modifier
+     action="select-first-hit"
+     modifiers="Ctrl" />
+  <modifier
+     action="select-force-drag"
+     modifiers="Alt" />
+  <modifier
+     action="select-cycle"
+     modifiers="Alt" />
+  <modifier
+     action="move-confine"
+     modifiers="Ctrl" />
+  <modifier
+     action="move-increment"
+     modifiers="Alt" />
+  <modifier
+     action="trans-confine"
+     modifiers="Ctrl" />
+  <modifier
+     action="trans-increment"
+     modifiers="Alt" />
+  <modifier
+     action="trans-off-center"
+     modifiers="Shift" />
+  <modifier
+     action="trans-snapping"
+     modifiers="Shift" />
+</keys>

@@ -1,5 +1,9 @@
 wm : i3
 term : alacritty / default
-shell : bash (in search of replacement)
+font : DadyMono Nerd Font
+shell : fish 
 prompt : starship
-term multiplex :
+text editor : nvim
+nvim distro : lazynvim
+colorscheme : catppuccin-mocha
+term multiplex : termux
