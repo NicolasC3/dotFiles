@@ -31,17 +31,17 @@ end
 return {
   s("ctrig", t("also loaded!!")),
 
-  s({
-    trig = "ff",
-    snippetType = "autosnippet",
-  }, {
-    t("\\frac{"),
-    i(1),
-    t("}"),
-    t("{"),
-    i(2),
-    t("}"),
-  }, { condition = in_mathzone }),
+  -- s({
+  --   trig = "ff",
+  --   snippetType = "autosnippet",
+  -- }, {
+  --   t("\\frac{"),
+  --   i(1),
+  --   t("}"),
+  --   t("{"),
+  --   i(2),
+  --   t("}"),
+  -- }, { condition = in_mathzone }),
 
   s({
     trig = "ket",

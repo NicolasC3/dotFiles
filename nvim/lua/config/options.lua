@@ -3,3 +3,5 @@
 -- Add any additional options here
 vim.o.textwidth = 80
 vim.opt.colorcolumn = "80"
+vim.opt.conceallevel = 2
+vim.opt.cmdheight = 0

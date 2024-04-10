@@ -56,9 +56,14 @@ return {
   -- },
   {
     "lervag/vimtex",
+    filetypes = { "tex" },
     config = function()
       vim.g.vimtex_view_general_viewer = "evince"
       vim.g.vimtex_compiler_method = "latexmk"
+      vim.g.vimtex_compiler_latexmk = {
+        aux_dir = ".aux",
+        out_dir = "",
+      }
     end,
     -- latexmk = {
     --   build_dir = "build",
@@ -73,5 +78,39 @@ return {
   {
     "peterbjorgensen/sved",
     filetypes = { "tex" },
+  },
+  -- {
+  --   "tpope/vim-vinegar",
+  -- },
+  {
+    "prichrd/netrw.nvim",
+    config = function()
+      require("netrw").setup({
+        -- Put your configuration here, or leave the object empty to take the default
+        -- configuration.
+        -- icons = {
+        --   symlink = '', -- Symlink icon (directory and file)
+        --   directory = '', -- Directory icon
+        --   file = '', -- File icon
+        -- },
+        -- use_devicons = true, -- Uses nvim-web-devicons if true, otherwise use the file icon specified above
+        -- mappings = {}, -- Custom key mappings
+      })
+    end,
+  },
+  {
+    "nvim-neo-tree/neo-tree.nvim",
+    enabled = false,
+  },
+  {
+    "folke/noice.nvim",
+    enabled = false,
+  },
+  {
+    "akinsho/bufferline.nvim",
+    enabled = false,
+  },
+  {
+    "tpope/vim-fugitive",
   },
 }

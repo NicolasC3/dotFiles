@@ -28,41 +28,45 @@ end
 -- Then pass the table `{condition = in_mathzone}` to any snippet you want to
 -- expand only in math contexts.
 
-local not_in_mathzone = function()
-  -- The `in_mathzone` function requires the VimTeX plugin
-  return vim.fn["vimtex#syntax#in_mathzone"]() == 0
-end
-
 return {
   s({
-    trig = "(%a%a%a+)([^%a])",
-    regTrig = true,
+    trig = "ff",
+    -- regTrig = true,
     snippetType = "autosnippet",
-  }, {
-    t("\\"),
-    f(function(_, snip)
-      return snip.captures[1]
-    end),
-    f(function(_, snip)
-      return snip.captures[2]
-    end),
-  }, { condition = in_mathzone }),
+  }, fmt("\\frac{<>}{<>}", { i(1), i(2) }, { delimiters = "<>" }), { condition = in_mathzone }),
 
-  s({
-    -- trig = "phi[^%a]",
-    trig = ";(%a+)([^%a])",
-    regTrig = true,
-    -- wordTrig = true,
-    snippetType = "autosnippet",
-  }, {
-    -- t("$\\phi$"),
-    t("$\\"),
-    f(function(_, snip)
-      return snip.captures[1]
-    end),
-    t("$"),
-    f(function(_, snip)
-      return snip.captures[2]
-    end),
-  }, { condition = not_in_mathzone }),
+  s(
+    {
+      trig = "(%a)(%a)([^%a])",
+      regTrig = true,
+      snippetType = "autosnippet",
+    },
+    fmt("<>_{<>}<>", {
+      f(function(_, snip)
+        return snip.captures[1]
+      end),
+      f(function(_, snip)
+        return snip.captures[2]
+      end),
+      f(function(_, snip)
+        return snip.captures[3]
+      end),
+    }, { delimiters = "<>" }),
+    { condition = in_mathzone }
+  ),
+
+  s(
+    {
+      trig = "(%a[_%^])",
+      regTrig = true,
+      snippetType = "autosnippet",
+    },
+    fmt("<>{<>}", {
+      f(function(_, snip)
+        return snip.captures[1]
+      end),
+      i(1),
+    }, { delimiters = "<>" }),
+    { condition = in_mathzone }
+  ),
 }
