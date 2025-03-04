@@ -46,6 +46,8 @@ return {
           properties = {},
           types = {},
           operators = {},
+          floats = "transparent",
+          sidebars = "transparent",
         },
         color_overrides = {},
         custom_highlights = {},

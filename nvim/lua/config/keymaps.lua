@@ -28,9 +28,32 @@ end)
 vim.keymap.set("n", "<leader>gt", ":call SVED_Sync()<CR>")
 
 -- Insert mode motions
-vim.keymap.set("i", "<C-h>", "<Left>")
--- vim.keymap.set("i", "<C-j>", "<Down>")
--- vim.keymap.set("i", "<C-k>", "<Up>")
-vim.keymap.set("i", "<C-l>", "<Right>")
+vim.keymap.set("i", "<A-h>", "<Left>")
+vim.keymap.set("i", "<A-j>", "<Down>")
+vim.keymap.set("i", "<A-k>", "<Up>")
+vim.keymap.set("i", "<A-l>", "<Right>")
 
 vim.keymap.set("n", "-", "<cmd>Ex<cr><cr>", { silent = true })
+
+vim.keymap.set({ "n", "x" }, "<leader>sr", function()
+  require("ssr").open()
+end)
+
+-- Sacrilege
+-- vim.keymap.set("n", "j", "h")
+-- vim.keymap.set("n", "k", "j")
+-- vim.keymap.set("n", "l", "k")
+-- vim.keymap.set("n", "m", "l")
+-- vim.keymap.set("n", "h", "m")
+--
+-- vim.keymap.set("v", "j", "h")
+-- vim.keymap.set("v", "k", "j")
+-- vim.keymap.set("v", "l", "k")
+-- vim.keymap.set("v", "m", "l")
+-- vim.keymap.set("v", "h", "m")
+
+-- Commands
+vim.api.nvim_create_user_command("Notes", "vi /home/nc/Nextcloud/Notes", {})
+-- vim.cmd("abb notes Notes")
+vim.cmd("abb fmt !fmt -w 80")
+-- vim.cmd("command -range Copy s/\n/ /|normal yy|undo")

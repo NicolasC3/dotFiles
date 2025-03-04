@@ -34,19 +34,19 @@ local not_in_mathzone = function()
 end
 
 return {
-  s({
-    trig = "(%a%a%a+)([^%a])",
-    regTrig = true,
-    snippetType = "autosnippet",
-  }, {
-    t("\\"),
-    f(function(_, snip)
-      return snip.captures[1]
-    end),
-    f(function(_, snip)
-      return snip.captures[2]
-    end),
-  }, { condition = in_mathzone }),
+  -- s({
+  --   trig = "(%a%a%a+)([^%a])",
+  --   regTrig = true,
+  --   snippetType = "autosnippet",
+  -- }, {
+  --   t("\\"),
+  --   f(function(_, snip)
+  --     return snip.captures[1]
+  --   end),
+  --   f(function(_, snip)
+  --     return snip.captures[2]
+  --   end),
+  -- }, { condition = in_mathzone }),
 
   s({
     -- trig = "phi[^%a]",
